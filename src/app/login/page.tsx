@@ -22,7 +22,7 @@ export default async function LoginPage({
               <i className="fa-solid fa-lock"></i>
             </div>
             <h2 className={styles.cardTitle}>Welcome Back</h2>
-            <p className={styles.cardSubtitle}>Sign in with your AASTMT email to continue</p>
+            <p className={styles.cardSubtitle}>Sign in with your MSA University email to continue</p>
           </div>
 
           {error && (
@@ -41,8 +41,8 @@ export default async function LoginPage({
 
           <form>
             <div className={styles.formGroup}>
-              <label htmlFor="email">AASTMT Email <span className={styles.required}>*</span></label>
-              <input id="email" name="email" type="email" required placeholder="name@student.aast.edu" />
+              <label htmlFor="email">MSA Email <span className={styles.required}>*</span></label>
+              <input id="email" name="email" type="email" required placeholder="name@msa.edu.eg" />
             </div>
             <div className={styles.formGroup}>
               <label htmlFor="password">Password <span className={styles.required}>*</span></label>
@@ -59,7 +59,7 @@ export default async function LoginPage({
           </form>
 
           <p className={styles.footerNote}>
-            Only <strong>@student.aast.edu</strong>, <strong>@aast.edu</strong>, and <strong>@adj.aast.edu</strong> emails are accepted.
+            Only <strong>@msa.edu.eg</strong> emails are accepted.
           </p>
         </div>
       </div>

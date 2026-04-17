@@ -35,7 +35,7 @@ export default async function AdminDashboard() {
         <div className="container">
           <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
             <h1 className="logo">
-              <i className="fa-brands fa-python"></i> AASTMT BIS <span>Python Hub</span>
+              <i className="fa-solid fa-magnifying-glass-chart"></i> MSA CS313x <span>IR Hub</span>
             </h1>
           </Link>
           <nav style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>

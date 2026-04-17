@@ -16,86 +16,193 @@ interface RubricItem {
 
 const RUBRIC_DATA: RubricItem[] = [
   {
-    id: 'presentation',
-    label: 'Presentation',
-    icon: 'fa-person-chalkboard',
-    accent: '#6366f1',
+    id: 'phase1-domain',
+    label: 'Domain & Idea',
+    icon: 'fa-lightbulb',
+    accent: '#c9a84c',
     content: [
       {
-        title: 'Communication & Delivery',
+        title: 'Project Domain Definition & Product Idea Clarity (10 pts)',
         points: [
-          'Professional attire and confident posture',
-          'Clear, audible, and paced speaking style',
-          'Eye contact with the audience/evaluators',
-          'Fluent transitions between team members'
+          'Clear, well-defined problem domain',
+          'Realistic and original product idea',
+          'Aligned with Information Retrieval principles',
+          'Feasible scope for the project timeline'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'phase1-scraping',
+    label: 'Web Scraping',
+    icon: 'fa-spider',
+    accent: '#2563eb',
+    content: [
+      {
+        title: 'Web Scraping & Crawling Implementation (25 pts)',
+        points: [
+          'Multi-page scraping or crawling implementation',
+          'Structured data extraction from web sources',
+          'Minimum dataset size: 50–200 records',
+          'Consistent, well-structured data output'
         ]
       },
       {
-        title: 'Visual Aids & PPT',
+        title: 'Robots.txt Compliance & Ethical Crawling (10 pts)',
         points: [
-          'Clean, readable slides with consistent design',
-          'Effective use of diagrams and flowcharts',
-          'No text-heavy slides (use keywords)',
-          'Proper AASTMT/BIS branding'
+          'Respects robots.txt directives',
+          'Implements polite crawling (rate limiting)',
+          'No unauthorized data access',
+          'Documentation of ethical considerations'
         ]
       }
     ]
   },
   {
-    id: 'technical',
-    label: 'Technical Work',
-    icon: 'fa-code',
-    accent: '#a855f7',
-    content: [
-      {
-        title: 'Source Code Quality',
-        points: [
-          'Clean, DRY (Don\'t Repeat Yourself) code',
-          'Meaningful variable and function names',
-          'Proper indentation and commenting',
-          'Effective exception handling (try-except)'
-        ]
-      },
-      {
-        title: 'Functionality',
-        points: [
-          'Application runs without errors',
-          'All core features are implemented',
-          'Logical flow and data processing',
-          'Smart UI/UX even in console/GUI'
-        ]
-      }
-    ]
-  },
-  {
-    id: 'documentation',
-    label: 'Documentation',
-    icon: 'fa-file-lines',
-    accent: '#ec4899',
-    content: [
-      {
-        title: 'Technical Report',
-        points: [
-          'Clear problem definition and solution',
-          'Detailed flowcharts and logic explanation',
-          'Code snippets with explanations',
-          'Reflection and future enhancements'
-        ]
-      }
-    ]
-  },
-  {
-    id: 'qa',
-    label: 'Q&A Session',
-    icon: 'fa-comments',
+    id: 'phase1-data',
+    label: 'Data Pipeline',
+    icon: 'fa-database',
     accent: '#14b8a6',
     content: [
       {
-        title: 'Defense',
+        title: 'Data Storage Design — JSON/XML (10 pts)',
         points: [
-          'Answering logic-related questions accurately',
-          'Explaining specific code blocks on demand',
-          'Demonstrating deep understanding of the project'
+          'Structured format (JSON or XML)',
+          'Consistent schema across all records',
+          'Proper data organization and naming'
+        ]
+      },
+      {
+        title: 'Data Cleaning & Preprocessing Pipeline (20 pts)',
+        points: [
+          'Tokenization and normalization',
+          'Stopword removal',
+          'Handling missing/noisy data',
+          'Basic preprocessing pipeline implementation'
+        ]
+      },
+      {
+        title: 'Data Quality Handling (10 pts)',
+        points: [
+          'Missing data handling strategies',
+          'Noise reduction techniques',
+          'Duplicate detection and removal'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'phase1-analysis',
+    label: 'Analysis & Viz',
+    icon: 'fa-chart-line',
+    accent: '#ec4899',
+    content: [
+      {
+        title: 'Exploratory Data Analysis (10 pts)',
+        points: [
+          'Basic statistical analysis of the dataset',
+          'Keyword frequency analysis',
+          'Pattern discovery and dataset exploration',
+          'Meaningful insights from the data'
+        ]
+      },
+      {
+        title: 'Data Visualization & Interpretation (5 pts)',
+        points: [
+          'Clear, informative visualizations',
+          'Proper chart types for the data',
+          'Accurate interpretation of results'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'phase2-features',
+    label: 'Feature Extraction',
+    icon: 'fa-gears',
+    accent: '#f59e0b',
+    content: [
+      {
+        title: 'Feature Extraction (15 pts)',
+        points: [
+          'Relevant feature selection from processed data',
+          'TF-IDF or equivalent text feature extraction',
+          'Feature engineering for product functionality',
+          'Proper dimensionality considerations'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'phase2-product',
+    label: 'Product System',
+    icon: 'fa-rocket',
+    accent: '#1e3a5f',
+    content: [
+      {
+        title: 'Product System Implementation (25 pts)',
+        points: [
+          'Working product interface (CLI, web app, or dashboard)',
+          'Search-based system, insight dashboard, or recommendation engine',
+          'Functional end-to-end pipeline',
+          'User-facing output with clear value'
+        ]
+      },
+      {
+        title: 'Code Structure, Modularity & Reproducibility (5 pts)',
+        points: [
+          'Clean, modular code organization',
+          'Reproducible pipeline (documented steps)',
+          'Proper dependency and environment management'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'phase2-ai',
+    label: 'AI Integration',
+    icon: 'fa-brain',
+    accent: '#8b5cf6',
+    content: [
+      {
+        title: 'AI Feature Integration (20 pts)',
+        points: [
+          'Sentiment analysis, classification, summarization, or similar',
+          'AI used as a feature inside the product (not standalone)',
+          'Proper model selection and implementation',
+          'No black-box APIs used as full solution'
+        ]
+      },
+      {
+        title: 'AI Feature Relevance to Product (10 pts)',
+        points: [
+          'AI feature enhances the product meaningfully',
+          'Clear connection between AI output and user value',
+          'Integration feels natural, not forced'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'phase2-eval',
+    label: 'Evaluation',
+    icon: 'fa-clipboard-check',
+    accent: '#22c55e',
+    content: [
+      {
+        title: 'Insight Generation & Interpretation Quality (15 pts)',
+        points: [
+          'Meaningful insights derived from data',
+          'Clear interpretation and explanation',
+          'Actionable or informative conclusions'
+        ]
+      },
+      {
+        title: 'Evaluation of Outputs (10 pts)',
+        points: [
+          'Quantitative evaluation metrics where applicable',
+          'Qualitative assessment of results',
+          'Honest discussion of limitations'
         ]
       }
     ]
@@ -103,7 +210,7 @@ const RUBRIC_DATA: RubricItem[] = [
 ];
 
 export default function Rubric() {
-  const [openItems, setOpenItems] = useState<string[]>(['presentation']);
+  const [openItems, setOpenItems] = useState<string[]>(['phase1-domain']);
   const tocRef = useRef<HTMLDivElement>(null);
 
   const toggleItem = (id: string) => {
@@ -145,31 +252,31 @@ export default function Rubric() {
           <span className="badge">Grading Standards</span>
           <h2 className={styles.rubricTitle}>Project Rubric</h2>
           <p className={styles.rubricSubtitle}>
-            Your performance will be evaluated based on these key pillars. 
-            Aim for excellence in both logic and presentation.
+            Your project is evaluated in two phases. Phase I focuses on data collection 
+            and processing. Phase II covers the product, AI integration, and evaluation.
           </p>
         </div>
 
         <div className={styles.gradingGrid}>
           <div className={styles.gradingCard}>
-            <div className={styles.gradingIcon}><i className="fa-solid fa-code"></i></div>
+            <div className={styles.gradingIcon}><i className="fa-solid fa-spider"></i></div>
             <div>
-              <span className={styles.gradingValue}>10 Points</span>
-              <span className={styles.gradingLabel}>Python Project</span>
+              <span className={styles.gradingValue}>Phase I</span>
+              <span className={styles.gradingLabel}>Data & Scraping (100 pts)</span>
             </div>
           </div>
           <div className={styles.gradingCard}>
-            <div className={styles.gradingIcon}><i className="fa-solid fa-person-chalkboard"></i></div>
+            <div className={styles.gradingIcon}><i className="fa-solid fa-brain"></i></div>
             <div>
-              <span className={styles.gradingValue}>5 Points</span>
-              <span className={styles.gradingLabel}>Presentation</span>
+              <span className={styles.gradingValue}>Phase II</span>
+              <span className={styles.gradingLabel}>Product & AI (100 pts)</span>
             </div>
           </div>
           <div className={styles.gradingCard}>
-            <div className={styles.gradingIcon}><i className="fa-solid fa-circle-question"></i></div>
+            <div className={styles.gradingIcon}><i className="fa-solid fa-users"></i></div>
             <div>
-              <span className={styles.gradingValue}>2 Questions</span>
-              <span className={styles.gradingLabel}>Per Student (Q&A)</span>
+              <span className={styles.gradingValue}>Team-Based</span>
+              <span className={styles.gradingLabel}>Max 4 Members</span>
             </div>
           </div>
         </div>

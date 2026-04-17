@@ -5,16 +5,16 @@ export default function Hero() {
   return (
     <section className={styles.hero} id="about">
       <div className={styles.heroContent}>
-        <span className={styles.badge}>12th Week Project</span>
-        <h2 className={styles.title}>Introduction to Programming</h2>
+        <span className={styles.badge}>CS313x — Information Retrieval & Data Analysis</span>
+        <h2 className={styles.title}>MSA University — Faculty of CS</h2>
         <p className={styles.description}>
-          Explore the 20 comprehensive Python projects assigned by{" "}
-          <strong>Dr. Motaz Samy</strong> & <strong>TA. Toka Sherif</strong>. Build, learn,
-          and master the fundamentals of software engineering.
+          Build a real-world web intelligence product that collects, processes,
+          and analyzes web-based data with AI-powered features. Supervised by{" "}
+          <strong>Dr. Moataz Samy</strong>, <strong>TA. Farah Darwish</strong> &amp; <strong>TA. Mazen Ashraf</strong>.
         </p>
         <div className={styles.buttons}>
           <a href="#projects" className={`${styles.btn} ${styles.primaryBtn}`}>
-            Explore Projects <span><i className="fa-solid fa-arrow-down"></i></span>
+            Explore Domains <span><i className="fa-solid fa-arrow-down"></i></span>
           </a>
           <Link href="/login" className={`${styles.btn} ${styles.secondaryBtn}`}>
             Register Team <span><i className="fa-solid fa-users"></i></span>

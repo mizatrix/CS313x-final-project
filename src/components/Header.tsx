@@ -19,7 +19,7 @@ export default function Header() {
         </button>
 
         <Link href="/" className={styles.logo}>
-          <i className="fa-brands fa-python"></i> AASTMT BIS <span>Python Hub</span>
+          <i className="fa-solid fa-magnifying-glass-chart"></i> MSA CS313x <span>IR Hub</span>
         </Link>
 
         {isMenuOpen && (

@@ -9,278 +9,296 @@ export interface Project {
 export const projectsData: Project[] = [
   {
     id: 1,
-    title: "Student Management System",
-    description: "This system manages student academic records.",
+    title: "News Trend Analyzer",
+    description: "Analyze trending topics across news categories (politics, sports, tech).",
     features: [
-      "Add new students with name and ID",
-      "Store marks for multiple subjects",
-      "Calculate total and average marks",
-      "Assign grades based on performance",
-      "Display all student records",
-      "Search for a student by name or ID",
-      "Update student information if needed"
+      "Scrape news articles from multiple sources",
+      "Classify articles by topic and sentiment",
+      "Track trending keywords over time",
+      "AI-powered summarization of top stories",
+      "Interactive trend dashboard",
+      "Keyword frequency and co-occurrence analysis"
     ],
-    icon: "fa-user-graduate"
+    icon: "fa-newspaper"
   },
   {
     id: 2,
-    title: "Banking System",
-    description: "A simulation of basic banking operations.",
+    title: "Fake vs Real News Classifier",
+    description: "Build a tool that helps detect potentially misleading news articles.",
     features: [
-      "Create a new bank account with user details",
-      "Assign an initial balance",
-      "Deposit money into the account",
-      "Withdraw money with balance validation",
-      "Display current balance",
-      "Maintain a transaction history",
-      "Prevent overdrawing from account"
+      "Collect labeled news articles from the web",
+      "Extract textual features (TF-IDF, n-grams)",
+      "Train a classification model (fake vs real)",
+      "AI-powered credibility scoring",
+      "Display reasoning behind classification",
+      "Evaluate model with precision, recall, F1"
     ],
-    icon: "fa-university"
+    icon: "fa-shield-halved"
   },
   {
     id: 3,
-    title: "Library Management System",
-    description: "Manages book borrowing and return processes.",
+    title: "News Summarization Dashboard",
+    description: "Auto-summarize breaking news from multiple outlets into concise briefs.",
     features: [
-      "Add books with title, author, and ID",
-      "Display available and borrowed books",
-      "Borrow a book if available",
-      "Return a borrowed book",
-      "Search for a book by title or author",
-      "Track book availability status"
+      "Multi-source news scraping pipeline",
+      "AI-assisted text summarization",
+      "Category-based filtering (world, business, tech)",
+      "Keyword extraction and tagging",
+      "Daily digest generation",
+      "Searchable article archive"
     ],
-    icon: "fa-book"
+    icon: "fa-file-lines"
   },
   {
     id: 4,
-    title: "Inventory Management System",
-    description: "Tracks product stock in a store.",
+    title: "E-Commerce Review Analyzer",
+    description: "Analyze customer reviews for product intelligence insights.",
     features: [
-      "Add new products with price and quantity",
-      "Update product quantity",
-      "Remove products from inventory",
-      "Display all products",
-      "Calculate total inventory value",
-      "Alert when stock is low"
+      "Scrape product reviews from e-commerce sites",
+      "Sentiment analysis on review text",
+      "Aspect-based opinion mining",
+      "Star rating vs sentiment correlation",
+      "Product comparison dashboard",
+      "Top complaints and praise extraction"
     ],
-    icon: "fa-boxes"
+    icon: "fa-cart-shopping"
   },
   {
     id: 5,
-    title: "Expense Tracker",
-    description: "Tracks daily and monthly expenses.",
+    title: "Product Comparison Tool",
+    description: "Amazon-like product analysis with feature-by-feature comparisons.",
     features: [
-      "Add expenses with category and amount",
-      "Store expense history",
-      "Display all recorded expenses",
-      "Calculate total expenses",
-      "Filter expenses by category",
-      "Generate monthly spending report"
+      "Scrape product specs and reviews",
+      "Structured data storage in JSON",
+      "Side-by-side feature comparison",
+      "AI-powered pros & cons generation",
+      "Price trend tracking",
+      "User-friendly comparison interface"
     ],
-    icon: "fa-wallet"
+    icon: "fa-scale-balanced"
   },
   {
     id: 6,
-    title: "Quiz Application",
-    description: "A multiple-choice quiz system.",
+    title: "Customer Sentiment Dashboard",
+    description: "Real-time sentiment tracking across product reviews and social mentions.",
     features: [
-      "Load questions and options",
-      "Display one question at a time",
-      "Accept user answers",
-      "Check correctness of answers",
-      "Keep track of score",
-      "Display final result with performance"
+      "Multi-source data collection (reviews, mentions)",
+      "Real-time sentiment classification",
+      "Emotion detection (happy, angry, neutral)",
+      "Time-series sentiment visualization",
+      "Alert system for negative sentiment spikes",
+      "Export reports for stakeholders"
     ],
-    icon: "fa-question-circle"
+    icon: "fa-face-smile"
   },
   {
     id: 7,
-    title: "To-Do List Manager",
-    description: "Manages daily tasks efficiently.",
+    title: "Job Trend Analyzer",
+    description: "Track job market trends and identify in-demand skills.",
     features: [
-      "Add new tasks",
-      "Edit existing tasks",
-      "Delete tasks",
-      "Mark tasks as completed",
-      "Display all tasks with status",
-      "Store tasks for future use"
+      "Scrape job listings from career portals",
+      "Extract required skills and qualifications",
+      "Identify trending technologies and roles",
+      "Salary range analysis by role/location",
+      "AI-powered skill recommendation",
+      "Interactive job market dashboard"
     ],
-    icon: "fa-tasks"
+    icon: "fa-briefcase"
   },
   {
     id: 8,
-    title: "Attendance System",
-    description: "Tracks student attendance records.",
+    title: "Skill Demand Tracking System",
+    description: "Monitor which technical skills employers are seeking the most.",
     features: [
-      "Mark students as present or absent",
-      "Store attendance for each day",
-      "Display attendance records",
-      "Calculate attendance percentage",
-      "Generate student attendance report"
+      "Crawl job descriptions across industries",
+      "NLP-based skill extraction pipeline",
+      "Skill frequency and trend analysis",
+      "Compare skill demand across regions",
+      "AI classification of skill categories",
+      "Visualization of rising/declining skills"
     ],
-    icon: "fa-clipboard-user"
+    icon: "fa-chart-line"
   },
   {
     id: 9,
-    title: "Login & Registration System",
-    description: "Handles user authentication.",
+    title: "Job Classification & Filtering Tool",
+    description: "Automatically classify and filter jobs by category, level, and type.",
     features: [
-      "Register new users with username and password",
-      "Validate password strength",
-      "Allow user login",
-      "Limit login attempts for security",
-      "Check if username already exists",
-      "Display login success or failure messages"
+      "Scrape diverse job listings",
+      "Multi-label classification (category, seniority)",
+      "Smart search with IR-style retrieval",
+      "Filter by remote/hybrid/onsite",
+      "AI-powered job-to-resume matching",
+      "Exportable filtered results"
     ],
-    icon: "fa-sign-in-alt"
+    icon: "fa-filter"
   },
   {
     id: 10,
-    title: "Password Strength Checker",
-    description: "Evaluates password security.",
+    title: "Movie Review Sentiment Dashboard",
+    description: "Analyze movie reviews to gauge audience reception and trends.",
     features: [
-      "Check password length",
-      "Verify presence of numbers",
-      "Check for uppercase letters",
-      "Check for special characters",
-      "Classify password as weak, medium, or strong",
-      "Provide feedback for improvement"
+      "Scrape reviews from movie platforms",
+      "Sentiment scoring per movie",
+      "Genre-based sentiment comparison",
+      "AI summarization of critic consensus",
+      "Box office vs sentiment correlation",
+      "Top positive/negative review highlights"
     ],
-    icon: "fa-key"
+    icon: "fa-film"
   },
   {
     id: 11,
-    title: "Text Analyzer Tool",
-    description: "Analyzes input text data.",
+    title: "Film Recommendation Explorer",
+    description: "Content-based movie recommendation system using scraped data.",
     features: [
-      "Count total words",
-      "Count total characters",
-      "Count sentences",
-      "Identify most frequently used word",
-      "Convert text to lowercase/uppercase",
-      "Display summary report"
+      "Build a movie dataset via web scraping",
+      "TF-IDF on plot descriptions and genres",
+      "Content-based similarity matching",
+      "AI-enhanced recommendation explanations",
+      "User preference input interface",
+      "Evaluate recommendations with test users"
     ],
-    icon: "fa-file-alt"
+    icon: "fa-clapperboard"
   },
   {
     id: 12,
-    title: "ATM Simulation System",
-    description: "Simulates ATM operations.",
+    title: "IMDb-Style Analysis Tool",
+    description: "Deep analysis of movie/TV data with ratings, cast, and trend insights.",
     features: [
-      "User login using PIN",
-      "Check account balance",
-      "Deposit money",
-      "Withdraw money with validation",
-      "Show transaction history",
-      "Prevent incorrect PIN access"
+      "Scrape movie metadata (cast, ratings, year)",
+      "Statistical analysis of ratings distributions",
+      "Actor/director performance tracking",
+      "Genre popularity trends over decades",
+      "AI-generated movie tag suggestions",
+      "Interactive exploration dashboard"
     ],
-    icon: "fa-credit-card"
+    icon: "fa-star"
   },
   {
     id: 13,
-    title: "Number System Converter",
-    description: "Converts between number systems.",
+    title: "Recipe Recommendation System",
+    description: "Suggest recipes based on ingredients, cuisine, and dietary preferences.",
     features: [
-      "Convert decimal to binary",
-      "Convert binary to decimal",
-      "Convert decimal to hexadecimal",
-      "Convert hexadecimal to decimal",
-      "Validate input values",
-      "Display conversion results clearly"
+      "Scrape recipes from cooking websites",
+      "Ingredient-based search and retrieval",
+      "Cuisine classification (Italian, Asian, etc.)",
+      "AI-powered dietary substitution suggestions",
+      "Nutritional information extraction",
+      "Personalized recommendation interface"
     ],
-    icon: "fa-calculator"
+    icon: "fa-utensils"
   },
   {
     id: 14,
-    title: "Sorting & Searching Tool",
-    description: "Performs basic data operations.",
+    title: "Ingredient-Based Search Tool",
+    description: "Find recipes by what you have in your kitchen — IR-style retrieval.",
     features: [
-      "Accept list of numbers from user",
-      "Sort numbers in ascending order",
-      "Search for a specific number",
-      "Display sorted list",
-      "Show search results (found/not found)"
+      "Build a recipe corpus from the web",
+      "Inverted index on ingredient lists",
+      "Boolean and ranked retrieval models",
+      "AI-powered ingredient pairing suggestions",
+      "Handle synonyms and variations",
+      "User-friendly search interface"
     ],
-    icon: "fa-sort-numeric-up"
+    icon: "fa-carrot"
   },
   {
     id: 15,
-    title: "Multiplication Table Generator",
-    description: "Generates multiplication tables.",
+    title: "Cuisine Classification Dashboard",
+    description: "Classify and explore recipes by cuisine type using ML.",
     features: [
-      "Generate table for a single number",
-      "Generate tables for a range of numbers",
-      "Display formatted output",
-      "Validate user input",
-      "Allow repeated generation"
+      "Multi-source recipe scraping",
+      "Feature extraction from recipe text",
+      "Train cuisine type classifier",
+      "Confusion matrix and accuracy metrics",
+      "Explore cuisines by region on a dashboard",
+      "AI-generated cuisine style descriptions"
     ],
-    icon: "fa-table"
+    icon: "fa-globe"
   },
   {
     id: 16,
-    title: "Calendar Generator",
-    description: "Displays monthly calendar.",
+    title: "Travel Destination Insights",
+    description: "Analyze travel reviews to surface the best destinations and experiences.",
     features: [
-      "Input month and year",
-      "Calculate correct starting day",
-      "Display formatted calendar layout",
-      "Show number of days in month",
-      "Handle leap years correctly"
+      "Scrape travel reviews and guides",
+      "Sentiment analysis on destination reviews",
+      "Seasonal trend analysis",
+      "AI-powered travel recommendation engine",
+      "Budget vs rating correlation analysis",
+      "Interactive destination explorer map"
     ],
-    icon: "fa-calendar-alt"
+    icon: "fa-plane"
   },
   {
     id: 17,
-    title: "File-Based Chat Simulation",
-    description: "Simulates messaging system using files.",
+    title: "Hotel Review Analysis System",
+    description: "Deep-dive into hotel reviews to extract quality insights.",
     features: [
-      "Send messages from user A to user B",
-      "Store messages in a file",
-      "Read and display chat history",
-      "Clear chat history if needed",
-      "Simulate conversation flow"
+      "Scrape hotel reviews from booking platforms",
+      "Aspect-based sentiment (cleanliness, service, etc.)",
+      "Price-to-satisfaction ratio analysis",
+      "AI-generated review summaries",
+      "Comparison across hotel chains",
+      "Trend analysis over time"
     ],
-    icon: "fa-comments"
+    icon: "fa-hotel"
   },
   {
     id: 18,
-    title: "Mini CRM System",
-    description: "Manages customer leads and follow-ups.",
+    title: "Tourist Trend Analyzer",
+    description: "Track tourism trends and popular destinations worldwide.",
     features: [
-      "Add new customer leads",
-      "Store contact details",
-      "Assign lead status (hot/warm/cold)",
-      "Update lead status",
-      "Search for leads",
-      "Generate follow-up reports"
+      "Crawl tourism blogs and review sites",
+      "Keyword and topic extraction",
+      "Seasonal popularity patterns",
+      "AI classification of travel types (adventure, luxury, etc.)",
+      "Geographic trend visualization",
+      "Insight generation for travel agencies"
     ],
-    icon: "fa-users"
+    icon: "fa-map-location-dot"
   },
   {
     id: 19,
-    title: "Grade Calculator System",
-    description: "Calculates academic performance.",
+    title: "Developer Article Analyzer",
+    description: "Analyze programming articles and tutorials for tech insights.",
     features: [
-      "Input marks for multiple subjects",
-      "Calculate total and average",
-      "Assign grades based on range",
-      "Display GPA or percentage",
-      "Show final result report"
+      "Scrape tech blogs and dev platforms",
+      "Topic modeling on article content",
+      "Programming language trend analysis",
+      "AI-powered article quality scoring",
+      "Author influence tracking",
+      "Technology stack popularity dashboard"
     ],
-    icon: "fa-graduation-cap"
+    icon: "fa-code"
   },
   {
     id: 20,
-    title: "Text-Based Adventure Game",
-    description: "Interactive story game with choices.",
+    title: "Tech Topic Clustering Tool",
+    description: "Cluster and explore technology topics from developer communities.",
     features: [
-      "Start game with introduction story",
-      "Present choices to user",
-      "Change story based on decisions",
-      "Manage player inventory",
-      "Handle multiple endings",
-      "Restart or exit game option"
+      "Crawl developer forums and Q&A sites",
+      "TF-IDF vectorization of discussions",
+      "K-means or hierarchical clustering",
+      "AI-generated cluster labels and summaries",
+      "Interactive cluster visualization",
+      "Trending topic detection over time"
     ],
-    icon: "fa-gamepad"
+    icon: "fa-diagram-project"
+  },
+  {
+    id: 21,
+    title: "Programming Trend Dashboard",
+    description: "Monitor the rise and fall of programming languages and frameworks.",
+    features: [
+      "Scrape job posts, articles, and repositories",
+      "Language and framework mention frequency",
+      "Year-over-year growth analysis",
+      "AI-powered future trend predictions",
+      "Community sentiment per technology",
+      "Interactive comparison charts"
+    ],
+    icon: "fa-laptop-code"
   }
 ];

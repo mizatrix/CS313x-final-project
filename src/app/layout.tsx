@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "AASTMT BIS | Python Projects",
-  description: "Explore the comprehensive Python projects assigned by Dr. Motaz Samy & TA. Toka Sherif.",
+  title: "MSA CS313x | Information Retrieval Projects",
+  description: "MSA University — Faculty of Computer Science. CS313x Information Retrieval & Data Analysis project hub. Supervised by Dr. Moataz Samy, TA. Farah Darwish & TA. Mazen Ashraf.",
 };
 
 export default function RootLayout({

@@ -32,9 +32,9 @@ export async function signup(formData: FormData) {
   const email = formData.get('email') as string
   const password = formData.get('password') as string
 
-  // AASTMT Domain Verification
-  if (!email.endsWith('@student.aast.edu') && !email.endsWith('@aast.edu') && !email.endsWith('@adj.aast.edu')) {
-    redirect('/login?error=Only official AASTMT emails (@student.aast.edu, @aast.edu, @adj.aast.edu) are permitted.')
+  // MSA University Domain Verification
+  if (!email.endsWith('@msa.edu.eg')) {
+    redirect('/login?error=Only official MSA University emails (@msa.edu.eg) are permitted.')
   }
 
   const data = {
