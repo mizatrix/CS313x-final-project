@@ -28,6 +28,11 @@ export default async function DashboardPage({
     .eq('id', user.id)
     .single()
 
+  // Instructors go to admin panel
+  if (profile?.role === 'instructor') {
+    redirect('/admin')
+  }
+
   // Fetch the student's team (as leader)
   const { data: team } = await supabase
     .from('teams')
