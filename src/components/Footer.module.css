@@ -1,0 +1,29 @@
+.footer {
+    text-align: center;
+    padding: 3rem 0;
+    border-top: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    font-size: var(--fs-xs);
+    background: rgba(11, 15, 25, 0.5);
+    backdrop-filter: blur(8px);
+    margin-top: 4rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.copyright {
+    margin: 0;
+    opacity: 0.8;
+}
+
+.credits {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    line-height: 1.8;
+}
+
+

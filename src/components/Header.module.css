@@ -1,0 +1,144 @@
+.glassNav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(11, 15, 25, 0.7);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 1.2rem 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.logo {
+    font-size: var(--fs-xl);
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--primary-color);
+    font-weight: 400;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.navLink {
+    color: var(--text-main);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 600;
+    transition: color 0.3s;
+    font-size: var(--fs-sm);
+}
+
+.navLink:hover {
+    color: var(--primary-color);
+}
+
+.mobileToggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.navClose {
+    display: none;
+}
+
+/* ── Tablet (769px – 1024px): nav stays horizontal, just tighter ── */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .navLink {
+        margin-left: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobileToggle {
+        display: block;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;
+        height: 100vh;
+        background: rgba(11, 15, 25, 0.98);
+        backdrop-filter: blur(16px);
+        flex-direction: column;
+        padding: 5rem 2rem 2rem;
+        gap: 2rem;
+        border-right: 1px solid var(--glass-border);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: translateX(-100%);
+        z-index: 99;
+        align-items: flex-start;
+    }
+
+    .navActive {
+        transform: translateX(0);
+        box-shadow: 20px 0 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .navLink {
+        margin-left: 0;
+        font-size: 1.2rem;
+        width: 100%;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .navClose {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--glass-border);
+        color: var(--text-main);
+        font-size: 1.2rem;
+        cursor: pointer;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 101;
+    }
+
+    .navClose:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--primary-color);
+        transform: rotate(90deg);
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(4px);
+        z-index: 98;
+    }
+}

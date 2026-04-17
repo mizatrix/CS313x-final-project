@@ -1,0 +1,386 @@
+.rubricSection {
+    padding: 5rem 0 6rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.rubricHeader {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.rubricTitle {
+    font-size: var(--fs-3xl);
+    font-weight: 800;
+    margin-top: 0.5rem;
+    background: linear-gradient(to right, #fff, #a5b4fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rubricSubtitle {
+    color: var(--text-muted);
+    font-size: var(--fs-base);
+    max-width: 600px;
+    margin: 0.8rem auto 2.5rem;
+}
+
+/* Grading Overview Grid */
+.gradingGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gradingCard {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.gradingCard:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--primary-color);
+}
+
+.gradingIcon {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+}
+
+.gradingValue {
+    display: block;
+    font-size: var(--fs-xl);
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.gradingLabel {
+    display: block;
+    font-size: var(--fs-xs);
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.2rem;
+}
+
+/* ── Tablet: compact row ── */
+@media (max-width: 768px) {
+    .gradingGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    .gradingCard {
+        padding: 1rem 0.8rem;
+    }
+    .gradingValue {
+        font-size: var(--fs-lg);
+    }
+}
+
+/* ── Mobile: single column list ── */
+@media (max-width: 480px) {
+    .gradingGrid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .gradingCard {
+        padding: 1rem 1.2rem;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        gap: 1.2rem;
+    }
+    
+    .gradingIcon {
+        margin-bottom: 0;
+        width: 32px;
+        flex-shrink: 0;
+    }
+    
+    .gradingValue {
+        font-size: 1.4rem;
+    }
+}
+
+/* Quick-nav pill bar */
+.rubricToc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+    padding: 0.5rem 0;
+}
+
+.rubricToc::-webkit-scrollbar {
+    display: none; /* Hide scrollbar Chrome/Safari */
+}
+
+.tocPill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem 1.1rem;
+    border-radius: 50px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    color: var(--text-muted);
+    font-family: inherit;
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(8px);
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+}
+
+.tocPill:hover {
+    background: rgba(255,255,255,0.07);
+    color: var(--text-main);
+    border-color: rgba(255,255,255,0.18);
+}
+
+.tocPillActive {
+    background: color-mix(in srgb, var(--accent, var(--primary-color)) 18%, transparent);
+    border-color: var(--accent, var(--primary-color));
+    color: var(--accent, var(--primary-color));
+}
+
+.tocPillToggleAll {
+    --accent: #6366f1;
+    margin-left: 0.4rem;
+    border-style: dashed;
+}
+
+/* Accordion */
+.rubricAccordion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.accordionItem {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--glass-shadow);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.accordionItemOpen {
+    border-color: var(--accent, var(--primary-color));
+    box-shadow: 0 0 0 1px var(--accent, var(--primary-color)),
+                0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.accordionTrigger {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    width: 100%;
+    padding: 1.2rem 1.6rem;
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: var(--fs-base);
+    font-weight: 700;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.2s;
+}
+
+.accordionTrigger:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.accordionIcon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--accent, var(--primary-color)) 15%, transparent);
+    color: var(--accent, var(--primary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: background 0.3s, color 0.3s;
+}
+
+.accordionItemOpen .accordionIcon {
+    background: var(--accent, var(--primary-color));
+    color: #fff;
+}
+
+.accordionLabel {
+    flex: 1;
+}
+
+.accordionCount {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    background: rgba(255,255,255,0.06);
+    padding: 0.25rem 0.65rem;
+    border-radius: 50px;
+    white-space: nowrap;
+}
+
+.accordionChevron {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-left: 0.4rem;
+}
+
+.accordionChevronUp {
+    transform: rotate(-180deg);
+}
+
+/* Body */
+.accordionBody {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+    border-top: 1px solid transparent;
+}
+
+.accordionItemOpen .accordionBody {
+    grid-template-rows: 1fr;
+    border-top-color: var(--glass-border);
+}
+
+.accordionInner {
+    overflow: hidden;
+    padding: 0 1.6rem;
+    transition: padding 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordionItemOpen .accordionInner {
+    padding: 1.4rem 1.6rem;
+}
+
+/* Items */
+.rubricItem {
+    margin-bottom: 1.2rem;
+}
+.rubricItem:last-child {
+    margin-bottom: 0;
+}
+
+.itemHeading {
+    font-weight: 700;
+    font-size: var(--fs-xs);
+    color: var(--accent, var(--primary-color));
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.itemList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.itemList li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: var(--fs-sm);
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.025);
+    padding: 0.55rem 0.8rem;
+    border-radius: 8px;
+    border-left: 3px solid color-mix(in srgb, var(--accent, var(--primary-color)) 50%, transparent);
+    line-height: 1.45;
+}
+
+.itemList li i {
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    font-size: 0.75rem;
+    color: var(--accent, var(--primary-color));
+}
+
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+    .rubricAccordion {
+        max-width: 100%;
+    }
+}
+
+/* ── Tablet / Large Mobile ── */
+@media (max-width: 768px) {
+    .rubricToc {
+        padding: 0.5rem 0;
+        margin-bottom: 2rem;
+    }
+    
+    .accordionCount {
+        display: none;
+    }
+    
+    .accordionTrigger {
+        padding: 1rem 1.2rem;
+    }
+
+    .rubricTitle {
+        font-size: var(--fs-2xl);
+    }
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+    .rubricSection {
+        padding: 3rem 0 4rem;
+    }
+
+    .rubricToc {
+        gap: 0.4rem;
+    }
+
+    .tocPill {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .accordionTrigger {
+        padding: 0.9rem 1rem;
+        font-size: var(--fs-sm);
+    }
+
+    .accordionIcon {
+        width: 34px;
+        height: 34px;
+        font-size: 0.95rem;
+    }
+}

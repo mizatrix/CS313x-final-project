@@ -1,0 +1,24 @@
+:root {
+    --bg-color: #0b0f19;
+    --primary-color: #6366f1;
+    --secondary-color: #8b5cf6;
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    
+    /* Responsive Spacing Tokens */
+    --container-padding: clamp(1rem, 5vw, 2rem);
+    --section-padding: clamp(4rem, 10vw, 8rem);
+    
+    /* Fluid Typography Scale */
+    --fs-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.85rem);
+    --fs-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+    --fs-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+    --fs-lg: clamp(1.125rem, 1.05rem + 0.375vw, 1.25rem);
+    --fs-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+    --fs-2xl: clamp(1.5rem, 1.35rem + 0.75vw, 2rem);
+    --fs-3xl: clamp(2rem, 1.75rem + 1.25vw, 3rem);
+    --fs-hero: clamp(2.5rem, 2rem + 2.5vw, 4.5rem);
+}

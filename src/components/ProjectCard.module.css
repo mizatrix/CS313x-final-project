@@ -1,0 +1,86 @@
+.projectCard {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 2rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    box-shadow: var(--glass-shadow);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.projectCard:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(99, 102, 241, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.cardIcon {
+    width: 60px;
+    height: 60px;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s;
+}
+
+.projectCard:hover .cardIcon {
+    background: var(--primary-color);
+    color: white;
+}
+
+.projectCard h3 {
+    font-size: var(--fs-lg);
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.projectCard p {
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
+    flex-grow: 1;
+}
+
+.cardFooter {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: var(--fs-xs);
+}
+
+.takenProject {
+    opacity: 0.5;
+    filter: grayscale(60%);
+}
+
+.takenProject:hover {
+    transform: none;
+    border-color: var(--glass-border);
+    background: var(--glass-bg);
+}
+
+.takenBadge {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    background: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+    padding: 0.35rem 0.7rem;
+    border-radius: 6px;
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    margin-bottom: 0.8rem;
+    width: fit-content;
+}

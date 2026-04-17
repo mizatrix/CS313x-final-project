@@ -1,0 +1,110 @@
+.hero {
+    padding: var(--section-padding) 0 5rem;
+    text-align: center;
+}
+
+.heroContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(99, 102, 241, 0.15);
+    color: var(--primary-color);
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: var(--fs-xs);
+    margin-bottom: 1.5rem;
+}
+
+.title {
+    font-size: var(--fs-hero);
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+    line-height: 1.1;
+    background: linear-gradient(to right, #fff, #a5b4fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.description {
+    font-size: var(--fs-lg);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: var(--fs-sm);
+    letter-spacing: 0.01em;
+}
+
+.primaryBtn {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+.primaryBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.6);
+}
+
+.secondaryBtn {
+    background: var(--glass-bg);
+    color: var(--text-main);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+}
+
+.secondaryBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+/* ── Tablet (481px – 768px) ── */
+@media (max-width: 768px) {
+    .hero {
+        padding: 6rem 0 3rem;
+    }
+    .description {
+        margin-bottom: 2rem;
+    }
+}
+
+/* ── Mobile (≤ 480px) ── */
+@media (max-width: 480px) {
+    .hero {
+        padding: 5rem 0 2.5rem;
+    }
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    .btn {
+        width: 100%;
+        max-width: 320px;
+    }
+}
