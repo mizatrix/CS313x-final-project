@@ -161,7 +161,7 @@ export default async function DashboardPage({
                   ></textarea>
                   <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '0.4rem' }}>
                     <i className="fa-solid fa-circle-info" style={{ marginRight: '0.3rem' }}></i>
-                    Enter each member&apos;s name and ID on a separate line. Maximum 4 members allowed.
+                    Enter each member&apos;s name and ID on a separate line. Maximum 5 members allowed.
                   </p>
                 </div>
                 <button type="submit" className="btn primary-btn submit-btn" style={{ marginTop: 'auto' }}>

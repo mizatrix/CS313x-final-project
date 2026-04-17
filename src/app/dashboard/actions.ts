@@ -69,9 +69,9 @@ export async function registerTeam(formData: FormData) {
     ? membersList.split('\n').filter(Boolean).map(line => line.trim())
     : []
 
-  // Enforce maximum of 4 members per team
-  if (members.length > 4) {
-    redirect('/dashboard?error=A team can have a maximum of 4 members.')
+  // Enforce maximum of 5 members per team
+  if (members.length > 5) {
+    redirect('/dashboard?error=A team can have a maximum of 5 members.')
   }
 
   const { error } = await supabase.from('teams').insert([

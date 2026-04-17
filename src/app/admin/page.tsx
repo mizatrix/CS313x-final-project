@@ -1,6 +1,8 @@
 import { createClient } from '@/utils/supabase/server'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
+import { projectsData } from '@/data/projects'
+import AdminPanel from '@/components/AdminPanel'
 
 export default async function AdminDashboard() {
   const supabase = await createClient()
@@ -19,7 +21,21 @@ export default async function AdminDashboard() {
     redirect('/dashboard')
   }
 
-  // Fetch all submissions with team details
+  // Build project lookup map
+  const projectsMap: Record<number, { id: number; title: string }> = {}
+  projectsData.forEach(p => { projectsMap[p.id] = { id: p.id, title: p.title } })
+
+  // Fetch all teams with leader profiles and submissions
+  const { data: teams } = await supabase
+    .from('teams')
+    .select(`
+      *,
+      profiles!leader_id ( full_name, student_id ),
+      submissions ( id, github_url, status, grade, feedback, created_at )
+    `)
+    .order('created_at', { ascending: false })
+
+  // Fetch all submissions with team and submitter details
   const { data: submissions } = await supabase
     .from('submissions')
     .select(`
@@ -28,6 +44,15 @@ export default async function AdminDashboard() {
       profiles!submitted_by ( full_name, student_id )
     `)
     .order('created_at', { ascending: false })
+
+  // Calculate stats
+  const totalTeams = teams?.length || 0
+  const totalSubmissions = submissions?.length || 0
+  const graded = submissions?.filter(s => s.status === 'graded').length || 0
+  const pending = totalSubmissions - graded
+  const totalStudents = (teams || []).reduce((acc, t) => {
+    return acc + 1 + (Array.isArray(t.members) ? t.members.length : 0)
+  }, 0)
 
   return (
     <>
@@ -39,6 +64,7 @@ export default async function AdminDashboard() {
             </h1>
           </Link>
           <nav style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <Link href="/dashboard">Dashboard</Link>
             <Link href="/#projects">Projects</Link>
             <form action="/auth/signout" method="post" style={{ display: 'inline' }}>
               <button className="btn secondary-btn" type="submit" style={{ padding: '0.5rem 1.2rem', fontSize: '0.9rem' }}>
@@ -52,78 +78,21 @@ export default async function AdminDashboard() {
       <div className="container" style={{ paddingTop: '4rem', paddingBottom: '5rem' }}>
         <div className="section-header">
           <div>
-            <span className="badge" style={{ marginBottom: '0.5rem', background: 'rgba(234, 179, 8, 0.15)', color: '#facc15' }}>Instructor Panel</span>
-            <h2 style={{ marginTop: '0.5rem' }}>Submission Review</h2>
+            <span className="badge" style={{ marginBottom: '0.5rem', background: 'rgba(245, 158, 11, 0.15)', color: '#f59e0b' }}>Instructor Panel</span>
+            <h2 style={{ marginTop: '0.5rem' }}>Admin Dashboard</h2>
+            <p style={{ color: 'var(--text-muted)', marginTop: '0.25rem', fontSize: '0.9rem' }}>
+              <i className="fa-solid fa-user-shield" style={{ marginRight: '0.3rem' }}></i>
+              Signed in as {user.email}
+            </p>
           </div>
         </div>
 
-        <div className="glass-card" style={{ padding: '2rem', overflowX: 'auto' }}>
-          <h3 style={{ marginBottom: '1.5rem' }}>
-            <i className="fa-solid fa-clipboard-list" style={{ marginRight: '0.5rem', color: 'var(--primary-color)' }}></i>
-            All Submissions
-          </h3>
-          
-          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
-            <thead>
-              <tr style={{ borderBottom: '1px solid var(--glass-border)' }}>
-                <th style={{ padding: '1rem', color: 'var(--text-muted)', fontWeight: 600 }}>Team</th>
-                <th style={{ padding: '1rem', color: 'var(--text-muted)', fontWeight: 600 }}>Project</th>
-                <th style={{ padding: '1rem', color: 'var(--text-muted)', fontWeight: 600 }}>Link</th>
-                <th style={{ padding: '1rem', color: 'var(--text-muted)', fontWeight: 600 }}>Status</th>
-                <th style={{ padding: '1rem', color: 'var(--text-muted)', fontWeight: 600 }}>Grade</th>
-              </tr>
-            </thead>
-            <tbody>
-              {submissions?.length === 0 ? (
-                <tr>
-                  <td colSpan={5} style={{ padding: '2rem', textAlign: 'center', color: 'var(--text-muted)' }}>
-                    <i className="fa-solid fa-inbox" style={{ fontSize: '2rem', display: 'block', marginBottom: '0.5rem' }}></i>
-                    No submissions found yet.
-                  </td>
-                </tr>
-              ) : (
-                submissions?.map((sub) => (
-                  <tr key={sub.id} style={{ borderBottom: '1px solid var(--glass-border)' }}>
-                     <td style={{ padding: '1rem' }}>
-                      <strong>{sub.teams?.team_name}</strong><br/>
-                      <small style={{ color: 'var(--text-muted)' }}>by: {sub.profiles?.full_name || 'Unknown'}</small>
-                    </td>
-                    <td style={{ padding: '1rem' }}>ID: {sub.teams?.project_id}</td>
-                    <td style={{ padding: '1rem' }}>
-                      <a href={sub.github_url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary-color)', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-                        <i className="fa-brands fa-github"></i> View Code
-                      </a>
-                    </td>
-                    <td style={{ padding: '1rem' }}>
-                      <span style={{ 
-                        padding: '0.25rem 0.75rem', 
-                        borderRadius: '20px', 
-                        background: sub.status === 'graded' ? 'rgba(34, 197, 94, 0.15)' : 'rgba(234, 179, 8, 0.15)',
-                        color: sub.status === 'graded' ? '#4ade80' : '#facc15',
-                        fontSize: '0.85rem',
-                        fontWeight: 600
-                      }}>
-                        {sub.status}
-                      </span>
-                    </td>
-                    <td style={{ padding: '1rem' }}>
-                      <form action="/actions/grade-submission" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                        <input type="hidden" name="submission_id" value={sub.id} />
-                        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-                          <input type="number" name="grade" placeholder="0-100" min={0} max={100} defaultValue={sub.grade} style={{ width: '75px', padding: '0.5rem', borderRadius: '8px', background: 'rgba(0,0,0,0.3)', border: '1px solid var(--glass-border)', color: 'white', textAlign: 'center' }} />
-                          <button type="submit" className="btn primary-btn" style={{ padding: '0.5rem 1rem', fontSize: '0.85rem' }}>
-                            <i className="fa-solid fa-check"></i>
-                          </button>
-                        </div>
-                        <input type="text" name="feedback" placeholder="Feedback..." defaultValue={sub.feedback || ''} style={{ width: '100%', padding: '0.4rem 0.6rem', borderRadius: '8px', background: 'rgba(0,0,0,0.3)', border: '1px solid var(--glass-border)', color: 'white', fontSize: '0.8rem' }} />
-                      </form>
-                    </td>
-                  </tr>
-                ))
-              )}
-            </tbody>
-          </table>
-        </div>
+        <AdminPanel
+          teams={teams || []}
+          submissions={submissions || []}
+          projectsMap={projectsMap}
+          stats={{ totalTeams, totalSubmissions, graded, pending, totalStudents }}
+        />
       </div>
     </>
   )
