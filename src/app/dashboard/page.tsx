@@ -151,7 +151,7 @@ export default async function DashboardPage({
                 </div>
                 <div className="form-group">
                   <label htmlFor="members">
-                    Team Members (one per line) &mdash; <span style={{ color: 'var(--primary-color)', fontWeight: 600 }}>max 4</span>
+                    Team Members (one per line) &mdash; <span style={{ color: 'var(--primary-color)', fontWeight: 600 }}>max 5</span>
                   </label>
                   <textarea
                     id="members"

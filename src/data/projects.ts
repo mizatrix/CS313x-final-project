@@ -7,298 +7,115 @@ export interface Project {
 }
 
 export const projectsData: Project[] = [
-  {
-    id: 1,
-    title: "News Trend Analyzer",
-    description: "Analyze trending topics across news categories (politics, sports, tech).",
-    features: [
-      "Scrape news articles from multiple sources",
-      "Classify articles by topic and sentiment",
-      "Track trending keywords over time",
-      "AI-powered summarization of top stories",
-      "Interactive trend dashboard",
-      "Keyword frequency and co-occurrence analysis"
-    ],
-    icon: "fa-newspaper"
-  },
-  {
-    id: 2,
-    title: "Fake vs Real News Classifier",
-    description: "Build a tool that helps detect potentially misleading news articles.",
-    features: [
-      "Collect labeled news articles from the web",
-      "Extract textual features (TF-IDF, n-grams)",
-      "Train a classification model (fake vs real)",
-      "AI-powered credibility scoring",
-      "Display reasoning behind classification",
-      "Evaluate model with precision, recall, F1"
-    ],
-    icon: "fa-shield-halved"
-  },
-  {
-    id: 3,
-    title: "News Summarization Dashboard",
-    description: "Auto-summarize breaking news from multiple outlets into concise briefs.",
-    features: [
-      "Multi-source news scraping pipeline",
-      "AI-assisted text summarization",
-      "Category-based filtering (world, business, tech)",
-      "Keyword extraction and tagging",
-      "Daily digest generation",
-      "Searchable article archive"
-    ],
-    icon: "fa-file-lines"
-  },
-  {
-    id: 4,
-    title: "E-Commerce Review Analyzer",
-    description: "Analyze customer reviews for product intelligence insights.",
-    features: [
-      "Scrape product reviews from e-commerce sites",
-      "Sentiment analysis on review text",
-      "Aspect-based opinion mining",
-      "Star rating vs sentiment correlation",
-      "Product comparison dashboard",
-      "Top complaints and praise extraction"
-    ],
-    icon: "fa-cart-shopping"
-  },
-  {
-    id: 5,
-    title: "Product Comparison Tool",
-    description: "Amazon-like product analysis with feature-by-feature comparisons.",
-    features: [
-      "Scrape product specs and reviews",
-      "Structured data storage in JSON",
-      "Side-by-side feature comparison",
-      "AI-powered pros & cons generation",
-      "Price trend tracking",
-      "User-friendly comparison interface"
-    ],
-    icon: "fa-scale-balanced"
-  },
-  {
-    id: 6,
-    title: "Customer Sentiment Dashboard",
-    description: "Real-time sentiment tracking across product reviews and social mentions.",
-    features: [
-      "Multi-source data collection (reviews, mentions)",
-      "Real-time sentiment classification",
-      "Emotion detection (happy, angry, neutral)",
-      "Time-series sentiment visualization",
-      "Alert system for negative sentiment spikes",
-      "Export reports for stakeholders"
-    ],
-    icon: "fa-face-smile"
-  },
-  {
-    id: 7,
-    title: "Job Trend Analyzer",
-    description: "Track job market trends and identify in-demand skills.",
-    features: [
-      "Scrape job listings from career portals",
-      "Extract required skills and qualifications",
-      "Identify trending technologies and roles",
-      "Salary range analysis by role/location",
-      "AI-powered skill recommendation",
-      "Interactive job market dashboard"
-    ],
-    icon: "fa-briefcase"
-  },
-  {
-    id: 8,
-    title: "Skill Demand Tracking System",
-    description: "Monitor which technical skills employers are seeking the most.",
-    features: [
-      "Crawl job descriptions across industries",
-      "NLP-based skill extraction pipeline",
-      "Skill frequency and trend analysis",
-      "Compare skill demand across regions",
-      "AI classification of skill categories",
-      "Visualization of rising/declining skills"
-    ],
-    icon: "fa-chart-line"
-  },
-  {
-    id: 9,
-    title: "Job Classification & Filtering Tool",
-    description: "Automatically classify and filter jobs by category, level, and type.",
-    features: [
-      "Scrape diverse job listings",
-      "Multi-label classification (category, seniority)",
-      "Smart search with IR-style retrieval",
-      "Filter by remote/hybrid/onsite",
-      "AI-powered job-to-resume matching",
-      "Exportable filtered results"
-    ],
-    icon: "fa-filter"
-  },
-  {
-    id: 10,
-    title: "Movie Review Sentiment Dashboard",
-    description: "Analyze movie reviews to gauge audience reception and trends.",
-    features: [
-      "Scrape reviews from movie platforms",
-      "Sentiment scoring per movie",
-      "Genre-based sentiment comparison",
-      "AI summarization of critic consensus",
-      "Box office vs sentiment correlation",
-      "Top positive/negative review highlights"
-    ],
-    icon: "fa-film"
-  },
-  {
-    id: 11,
-    title: "Film Recommendation Explorer",
-    description: "Content-based movie recommendation system using scraped data.",
-    features: [
-      "Build a movie dataset via web scraping",
-      "TF-IDF on plot descriptions and genres",
-      "Content-based similarity matching",
-      "AI-enhanced recommendation explanations",
-      "User preference input interface",
-      "Evaluate recommendations with test users"
-    ],
-    icon: "fa-clapperboard"
-  },
-  {
-    id: 12,
-    title: "IMDb-Style Analysis Tool",
-    description: "Deep analysis of movie/TV data with ratings, cast, and trend insights.",
-    features: [
-      "Scrape movie metadata (cast, ratings, year)",
-      "Statistical analysis of ratings distributions",
-      "Actor/director performance tracking",
-      "Genre popularity trends over decades",
-      "AI-generated movie tag suggestions",
-      "Interactive exploration dashboard"
-    ],
-    icon: "fa-star"
-  },
-  {
-    id: 13,
-    title: "Recipe Recommendation System",
-    description: "Suggest recipes based on ingredients, cuisine, and dietary preferences.",
-    features: [
-      "Scrape recipes from cooking websites",
-      "Ingredient-based search and retrieval",
-      "Cuisine classification (Italian, Asian, etc.)",
-      "AI-powered dietary substitution suggestions",
-      "Nutritional information extraction",
-      "Personalized recommendation interface"
-    ],
-    icon: "fa-utensils"
-  },
-  {
-    id: 14,
-    title: "Ingredient-Based Search Tool",
-    description: "Find recipes by what you have in your kitchen — IR-style retrieval.",
-    features: [
-      "Build a recipe corpus from the web",
-      "Inverted index on ingredient lists",
-      "Boolean and ranked retrieval models",
-      "AI-powered ingredient pairing suggestions",
-      "Handle synonyms and variations",
-      "User-friendly search interface"
-    ],
-    icon: "fa-carrot"
-  },
-  {
-    id: 15,
-    title: "Cuisine Classification Dashboard",
-    description: "Classify and explore recipes by cuisine type using ML.",
-    features: [
-      "Multi-source recipe scraping",
-      "Feature extraction from recipe text",
-      "Train cuisine type classifier",
-      "Confusion matrix and accuracy metrics",
-      "Explore cuisines by region on a dashboard",
-      "AI-generated cuisine style descriptions"
-    ],
-    icon: "fa-globe"
-  },
-  {
-    id: 16,
-    title: "Travel Destination Insights",
-    description: "Analyze travel reviews to surface the best destinations and experiences.",
-    features: [
-      "Scrape travel reviews and guides",
-      "Sentiment analysis on destination reviews",
-      "Seasonal trend analysis",
-      "AI-powered travel recommendation engine",
-      "Budget vs rating correlation analysis",
-      "Interactive destination explorer map"
-    ],
-    icon: "fa-plane"
-  },
-  {
-    id: 17,
-    title: "Hotel Review Analysis System",
-    description: "Deep-dive into hotel reviews to extract quality insights.",
-    features: [
-      "Scrape hotel reviews from booking platforms",
-      "Aspect-based sentiment (cleanliness, service, etc.)",
-      "Price-to-satisfaction ratio analysis",
-      "AI-generated review summaries",
-      "Comparison across hotel chains",
-      "Trend analysis over time"
-    ],
-    icon: "fa-hotel"
-  },
-  {
-    id: 18,
-    title: "Tourist Trend Analyzer",
-    description: "Track tourism trends and popular destinations worldwide.",
-    features: [
-      "Crawl tourism blogs and review sites",
-      "Keyword and topic extraction",
-      "Seasonal popularity patterns",
-      "AI classification of travel types (adventure, luxury, etc.)",
-      "Geographic trend visualization",
-      "Insight generation for travel agencies"
-    ],
-    icon: "fa-map-location-dot"
-  },
-  {
-    id: 19,
-    title: "Developer Article Analyzer",
-    description: "Analyze programming articles and tutorials for tech insights.",
-    features: [
-      "Scrape tech blogs and dev platforms",
-      "Topic modeling on article content",
-      "Programming language trend analysis",
-      "AI-powered article quality scoring",
-      "Author influence tracking",
-      "Technology stack popularity dashboard"
-    ],
-    icon: "fa-code"
-  },
-  {
-    id: 20,
-    title: "Tech Topic Clustering Tool",
-    description: "Cluster and explore technology topics from developer communities.",
-    features: [
-      "Crawl developer forums and Q&A sites",
-      "TF-IDF vectorization of discussions",
-      "K-means or hierarchical clustering",
-      "AI-generated cluster labels and summaries",
-      "Interactive cluster visualization",
-      "Trending topic detection over time"
-    ],
-    icon: "fa-diagram-project"
-  },
-  {
-    id: 21,
-    title: "Programming Trend Dashboard",
-    description: "Monitor the rise and fall of programming languages and frameworks.",
-    features: [
-      "Scrape job posts, articles, and repositories",
-      "Language and framework mention frequency",
-      "Year-over-year growth analysis",
-      "AI-powered future trend predictions",
-      "Community sentiment per technology",
-      "Interactive comparison charts"
-    ],
-    icon: "fa-laptop-code"
-  }
+  // ═══════════════════════════════════════
+  // DOMAIN 1: NEWS INTELLIGENCE (1–10)
+  // ═══════════════════════════════════════
+  { id: 1, title: "News Trend Analyzer", description: "Track trending topics across news categories over time.", features: ["Multi-source news scraping", "Topic frequency tracking", "Time-series trend visualization", "AI keyword extraction", "Category-based filtering", "Interactive trend dashboard"], icon: "fa-newspaper" },
+  { id: 2, title: "Fake News Classifier", description: "Detect potentially misleading news articles using NLP.", features: ["Labeled news dataset collection", "TF-IDF and n-gram features", "Binary classification model", "Credibility scoring", "Reasoning explanation UI", "Precision/Recall/F1 evaluation"], icon: "fa-shield-halved" },
+  { id: 3, title: "News Summarization Dashboard", description: "Auto-summarize breaking news into concise daily briefs.", features: ["Multi-outlet scraping pipeline", "AI text summarization", "Category filtering", "Keyword tagging", "Daily digest generator", "Searchable archive"], icon: "fa-file-lines" },
+  { id: 4, title: "Political Bias Detector", description: "Analyze news articles for political leaning and bias patterns.", features: ["Scrape articles from diverse outlets", "Sentiment and tone analysis", "Bias classification model", "Side-by-side outlet comparison", "Word choice pattern detection", "Visual bias spectrum display"], icon: "fa-scale-balanced" },
+  { id: 5, title: "Breaking News Tracker", description: "Real-time detection and alerting of breaking news events.", features: ["Continuous news feed crawling", "Event clustering algorithm", "Duplicate story detection", "Breaking news scoring", "Timeline reconstruction", "Push alert simulation"], icon: "fa-bolt" },
+  { id: 6, title: "News Sentiment Monitor", description: "Track public sentiment around major news events over time.", features: ["Headline and article scraping", "Time-series sentiment scoring", "Event-sentiment correlation", "Emotion classification", "Regional sentiment comparison", "Interactive sentiment charts"], icon: "fa-chart-area" },
+  { id: 7, title: "Source Credibility Scorer", description: "Rate news sources based on factual accuracy and bias metrics.", features: ["Crawl multiple news domains", "Fact-checking cross-reference", "Historical accuracy tracking", "Bias and tone scoring", "Source reliability dashboard", "AI trust score generation"], icon: "fa-circle-check" },
+  { id: 8, title: "Multilingual News Aggregator", description: "Aggregate and translate news from international sources.", features: ["Multi-language scraping", "Language detection", "AI-powered translation summaries", "Topic alignment across languages", "Cultural framing analysis", "Global news dashboard"], icon: "fa-language" },
+  { id: 9, title: "Press Release Analyzer", description: "Extract insights from corporate press releases and announcements.", features: ["Corporate website crawling", "Named entity recognition", "Company event timeline", "Sentiment trend by company", "Industry keyword trends", "AI insight generation"], icon: "fa-building" },
+  { id: 10, title: "Opinion vs. Fact Separator", description: "Classify news content into opinion pieces vs. factual reporting.", features: ["Article type scraping", "Linguistic feature extraction", "Opinion/fact classifier", "Subjectivity scoring", "Citation density analysis", "Visual content type breakdown"], icon: "fa-scissors" },
+
+  // ═══════════════════════════════════════
+  // DOMAIN 2: PRODUCT INTELLIGENCE (11–20)
+  // ═══════════════════════════════════════
+  { id: 11, title: "E-Commerce Review Analyzer", description: "Analyze customer reviews for product intelligence insights.", features: ["Product review scraping", "Sentiment analysis", "Aspect-based opinion mining", "Star vs sentiment correlation", "Product comparison dashboard", "Top complaints extraction"], icon: "fa-cart-shopping" },
+  { id: 12, title: "Product Comparison Engine", description: "Feature-by-feature product comparisons from scraped data.", features: ["Product specs scraping", "Structured JSON storage", "Side-by-side comparison", "AI pros & cons generation", "Price trend tracking", "Comparison interface"], icon: "fa-code-compare" },
+  { id: 13, title: "Customer Sentiment Dashboard", description: "Real-time sentiment tracking across product reviews.", features: ["Multi-source data collection", "Real-time classification", "Emotion detection", "Time-series visualization", "Negative sentiment alerts", "Exportable reports"], icon: "fa-face-smile" },
+  { id: 14, title: "Price Intelligence Tracker", description: "Monitor and compare prices across e-commerce platforms.", features: ["Multi-store price scraping", "Historical price database", "Price drop detection", "Competitor price analysis", "AI deal scoring", "Price alert dashboard"], icon: "fa-tags" },
+  { id: 15, title: "Brand Perception Monitor", description: "Track how consumers perceive brands across online channels.", features: ["Review and mention scraping", "Brand sentiment over time", "Competitor brand comparison", "Key theme extraction", "AI perception scoring", "Brand health dashboard"], icon: "fa-trophy" },
+  { id: 16, title: "Product Feature Extractor", description: "Automatically extract and categorize product features from descriptions.", features: ["Product page crawling", "NLP feature extraction", "Feature categorization", "Feature comparison matrix", "Missing feature detection", "AI feature importance ranking"], icon: "fa-list-check" },
+  { id: 17, title: "Warranty & Return Analyzer", description: "Analyze return reasons and warranty claims from review data.", features: ["Review mining for return mentions", "Issue categorization", "Defect pattern detection", "Product reliability scoring", "Temporal issue tracking", "AI root cause suggestions"], icon: "fa-rotate-left" },
+  { id: 18, title: "Marketplace Trend Spotter", description: "Identify emerging product trends in online marketplaces.", features: ["Bestseller list scraping", "Category growth tracking", "New product detection", "Keyword trend analysis", "Seasonal pattern identification", "AI trend prediction"], icon: "fa-arrow-trend-up" },
+  { id: 19, title: "Review Helpfulness Predictor", description: "Predict which reviews will be most helpful to other shoppers.", features: ["Review dataset collection", "Helpfulness feature engineering", "Regression/ranking model", "Text quality scoring", "Review length analysis", "Helpfulness recommendation UI"], icon: "fa-thumbs-up" },
+  { id: 20, title: "Counterfeit Product Detector", description: "Flag suspicious product listings that may indicate counterfeits.", features: ["Listing data collection", "Pricing anomaly detection", "Seller reputation analysis", "Image similarity checks", "AI risk scoring", "Suspicious listing dashboard"], icon: "fa-triangle-exclamation" },
+
+  // ═══════════════════════════════════════
+  // DOMAIN 3: JOB MARKET INTELLIGENCE (21–30)
+  // ═══════════════════════════════════════
+  { id: 21, title: "Job Trend Analyzer", description: "Track job market trends and identify in-demand skills.", features: ["Career portal scraping", "Skill extraction pipeline", "Trending tech identification", "Salary range analysis", "AI skill recommendation", "Interactive job dashboard"], icon: "fa-briefcase" },
+  { id: 22, title: "Skill Demand Tracker", description: "Monitor which technical skills employers seek the most.", features: ["Job description crawling", "NLP skill extraction", "Skill frequency trends", "Regional demand comparison", "AI skill categorization", "Rising/declining skill charts"], icon: "fa-chart-line" },
+  { id: 23, title: "Job Classification Tool", description: "Automatically classify jobs by category, level, and type.", features: ["Diverse job listing scraping", "Multi-label classification", "IR-style ranked retrieval", "Remote/hybrid/onsite filter", "AI job-resume matching", "Exportable filtered results"], icon: "fa-filter" },
+  { id: 24, title: "Salary Prediction System", description: "Predict salary ranges based on job title, location, and skills.", features: ["Salary data extraction", "Feature engineering", "Regression model training", "Location cost adjustment", "Experience level factors", "Interactive salary estimator"], icon: "fa-money-bill-trend-up" },
+  { id: 25, title: "Resume Keyword Optimizer", description: "Analyze job posts to suggest optimal resume keywords.", features: ["Job posting scraping", "Keyword frequency analysis", "ATS optimization scoring", "Industry-specific terms", "AI keyword suggestions", "Before/after resume scoring"], icon: "fa-file-word" },
+  { id: 26, title: "Company Culture Analyzer", description: "Assess company culture from employee reviews and job posts.", features: ["Employee review scraping", "Culture keyword extraction", "Work-life balance scoring", "Benefits analysis", "Company comparison", "AI culture summary"], icon: "fa-people-group" },
+  { id: 27, title: "Freelance Market Monitor", description: "Track freelance project trends and pricing across platforms.", features: ["Freelance platform scraping", "Rate analysis by skill", "Project category trends", "Competition density metrics", "AI rate recommendation", "Freelance opportunity dashboard"], icon: "fa-laptop-file" },
+  { id: 28, title: "Interview Question Analyzer", description: "Analyze and categorize common interview questions by role.", features: ["Interview forum scraping", "Question categorization", "Difficulty scoring", "Role-specific clustering", "AI answer framework suggestions", "Study plan generator"], icon: "fa-comments" },
+  { id: 29, title: "Remote Work Trend Explorer", description: "Track the evolution of remote work opportunities across industries.", features: ["Job listing time-series data", "Remote percentage tracking", "Industry comparison", "Geographic distribution", "AI remote work prediction", "Trend visualization dashboard"], icon: "fa-house-laptop" },
+  { id: 30, title: "Tech Layoff Tracker", description: "Monitor tech layoff announcements and their market impact.", features: ["News and announcement scraping", "Company layoff timeline", "Skill demand shift analysis", "Industry sentiment impact", "AI recovery prediction", "Layoff impact dashboard"], icon: "fa-user-minus" },
+
+  // ═══════════════════════════════════════
+  // DOMAIN 4: ENTERTAINMENT ANALYTICS (31–40)
+  // ═══════════════════════════════════════
+  { id: 31, title: "Movie Sentiment Dashboard", description: "Analyze movie reviews to gauge audience reception.", features: ["Movie review scraping", "Sentiment scoring per movie", "Genre sentiment comparison", "AI critic consensus summary", "Box office correlation", "Highlight extraction"], icon: "fa-film" },
+  { id: 32, title: "Film Recommendation Engine", description: "Content-based movie recommendation using scraped data.", features: ["Movie dataset building", "TF-IDF on plot descriptions", "Content similarity matching", "AI recommendation explanations", "User preference input", "Evaluation with test users"], icon: "fa-clapperboard" },
+  { id: 33, title: "IMDb Analysis Tool", description: "Deep analysis of movie data with ratings, cast, and trends.", features: ["Movie metadata scraping", "Rating distribution analysis", "Actor/director tracking", "Genre popularity trends", "AI tag suggestions", "Exploration dashboard"], icon: "fa-star" },
+  { id: 34, title: "Music Trend Analyzer", description: "Track music chart trends and artist popularity patterns.", features: ["Music chart scraping", "Artist trajectory tracking", "Genre evolution analysis", "Collaboration network mapping", "AI hit prediction features", "Interactive music dashboard"], icon: "fa-music" },
+  { id: 35, title: "Book Review Intelligence", description: "Analyze book reviews to surface reading recommendations.", features: ["Book review site scraping", "Genre-based clustering", "Author sentiment tracking", "Reading difficulty estimation", "AI recommendation engine", "Review theme extraction"], icon: "fa-book" },
+  { id: 36, title: "Gaming Review Analyzer", description: "Analyze video game reviews for quality and trend insights.", features: ["Game review scraping", "Platform comparison", "Genre popularity tracking", "User vs critic score analysis", "AI review summarization", "Game recommendation system"], icon: "fa-gamepad" },
+  { id: 37, title: "Podcast Discovery System", description: "Help users discover podcasts based on topic analysis.", features: ["Podcast directory scraping", "Episode transcript analysis", "Topic clustering", "Popularity metrics tracking", "AI topic recommendation", "Podcast similarity search"], icon: "fa-podcast" },
+  { id: 38, title: "TV Show Tracker", description: "Track TV show ratings, renewals, and viewer sentiment.", features: ["TV data scraping", "Season-over-season analysis", "Viewer sentiment tracking", "Cancellation risk scoring", "Cast popularity metrics", "AI renewal prediction"], icon: "fa-tv" },
+  { id: 39, title: "Celebrity Influence Meter", description: "Measure celebrity influence across entertainment domains.", features: ["Social mention scraping", "Cross-platform presence analysis", "Engagement metrics tracking", "Brand endorsement mapping", "AI influence scoring", "Influence trend visualization"], icon: "fa-user-tie" },
+  { id: 40, title: "Event Recommendation System", description: "Recommend local events based on user interests and trends.", features: ["Event listing scraping", "Category classification", "Location-based filtering", "Popularity scoring", "AI personalized suggestions", "Event calendar dashboard"], icon: "fa-calendar-days" },
+
+  // ═══════════════════════════════════════
+  // DOMAIN 5: FOOD & RECIPE INTELLIGENCE (41–50)
+  // ═══════════════════════════════════════
+  { id: 41, title: "Recipe Recommendation System", description: "Suggest recipes based on ingredients and dietary preferences.", features: ["Recipe website scraping", "Ingredient-based search", "Cuisine classification", "AI dietary substitutions", "Nutritional extraction", "Personalized recommendations"], icon: "fa-utensils" },
+  { id: 42, title: "Ingredient Search Engine", description: "Find recipes by what you have — IR-style retrieval.", features: ["Recipe corpus building", "Inverted index on ingredients", "Boolean and ranked retrieval", "AI ingredient pairing", "Synonym handling", "User-friendly search UI"], icon: "fa-carrot" },
+  { id: 43, title: "Cuisine Classifier Dashboard", description: "Classify and explore recipes by cuisine using ML.", features: ["Multi-source recipe scraping", "Recipe text feature extraction", "Cuisine type classifier", "Accuracy metrics display", "Regional cuisine explorer", "AI cuisine descriptions"], icon: "fa-globe" },
+  { id: 44, title: "Restaurant Review Analyzer", description: "Analyze restaurant reviews for dining insights.", features: ["Review platform scraping", "Aspect sentiment (food/service/ambiance)", "Price-quality analysis", "Cuisine trend tracking", "AI review summarization", "Restaurant comparison tool"], icon: "fa-store" },
+  { id: 45, title: "Nutrition Fact Checker", description: "Verify and compare nutritional claims across food products.", features: ["Product label scraping", "Nutritional data extraction", "Claim verification system", "Cross-product comparison", "AI health scoring", "Nutrition dashboard"], icon: "fa-apple-whole" },
+  { id: 46, title: "Diet Trend Analyzer", description: "Track popular diet trends and their online presence.", features: ["Health blog scraping", "Diet mention frequency", "Sentiment analysis per diet", "Scientific backing assessment", "Seasonal diet trends", "AI diet comparison"], icon: "fa-weight-scale" },
+  { id: 47, title: "Food Allergy Alert System", description: "Scan recipes and menus for allergen information.", features: ["Recipe and menu scraping", "Allergen keyword detection", "Cross-contamination flagging", "Safe alternative suggestions", "AI allergen risk scoring", "Allergy-safe recipe search"], icon: "fa-triangle-exclamation" },
+  { id: 48, title: "Meal Planning Assistant", description: "Generate weekly meal plans from scraped recipe databases.", features: ["Diverse recipe collection", "Nutritional balancing", "Budget optimization", "Grocery list generation", "AI meal plan suggestions", "Calendar-based meal planning"], icon: "fa-calendar-week" },
+  { id: 49, title: "Food Price Tracker", description: "Monitor grocery and food delivery prices across platforms.", features: ["Price scraping from stores", "Historical price tracking", "Price comparison by item", "Seasonal price patterns", "AI deal recommendations", "Budget optimization dashboard"], icon: "fa-receipt" },
+  { id: 50, title: "Cooking Technique Analyzer", description: "Analyze and categorize cooking techniques from recipe databases.", features: ["Recipe instruction parsing", "Technique identification NLP", "Difficulty level scoring", "Technique-by-cuisine mapping", "Video recipe linking", "AI technique tutorials"], icon: "fa-fire-burner" },
+
+  // ═══════════════════════════════════════
+  // DOMAIN 6: TRAVEL INTELLIGENCE (51–60)
+  // ═══════════════════════════════════════
+  { id: 51, title: "Destination Insights Explorer", description: "Surface the best travel destinations from review analysis.", features: ["Travel review scraping", "Destination sentiment scoring", "Seasonal trend analysis", "AI recommendation engine", "Budget-rating correlation", "Interactive destination map"], icon: "fa-plane" },
+  { id: 52, title: "Hotel Review Analyzer", description: "Deep-dive into hotel reviews for quality insights.", features: ["Booking platform scraping", "Aspect sentiment analysis", "Price-satisfaction ratio", "AI review summaries", "Hotel chain comparison", "Trend analysis over time"], icon: "fa-hotel" },
+  { id: 53, title: "Tourist Trend Monitor", description: "Track tourism trends and popular destinations worldwide.", features: ["Tourism blog crawling", "Keyword and topic extraction", "Seasonal popularity patterns", "Travel type classification", "Geographic visualization", "Agency insight reports"], icon: "fa-map-location-dot" },
+  { id: 54, title: "Flight Deal Finder", description: "Track and analyze flight pricing patterns and deals.", features: ["Flight price scraping", "Route price comparison", "Best booking time analysis", "Seasonal price patterns", "AI deal scoring", "Price alert dashboard"], icon: "fa-plane-departure" },
+  { id: 55, title: "Travel Blog Insights", description: "Extract and analyze insights from travel blogs and vlogs.", features: ["Travel blog crawling", "Destination extraction NER", "Experience categorization", "Sentiment by destination", "AI itinerary generation", "Blog recommendation system"], icon: "fa-blog" },
+  { id: 56, title: "Visa Requirement Checker", description: "Aggregate and simplify visa requirements across countries.", features: ["Embassy website scraping", "Requirement structuring", "Country pair search", "Processing time analysis", "AI eligibility assessment", "Comparison dashboard"], icon: "fa-passport" },
+  { id: 57, title: "Local Experience Finder", description: "Discover authentic local experiences from travel communities.", features: ["Community forum scraping", "Experience categorization", "Rating aggregation", "Location-based clustering", "AI experience matching", "Hidden gems dashboard"], icon: "fa-compass" },
+  { id: 58, title: "Travel Safety Analyzer", description: "Analyze safety data and travel advisories for destinations.", features: ["Advisory website scraping", "Risk categorization", "Historical incident tracking", "Safety score by region", "AI safety recommendations", "Interactive safety map"], icon: "fa-shield" },
+  { id: 59, title: "Airbnb Market Analyzer", description: "Analyze Airbnb listings for pricing and trend insights.", features: ["Listing data collection", "Price-location analysis", "Amenity popularity ranking", "Host rating patterns", "Seasonal pricing trends", "AI investment scoring"], icon: "fa-house" },
+  { id: 60, title: "Travel Cost Estimator", description: "Estimate travel costs based on destination and travel style.", features: ["Cost data scraping", "Budget breakdown by category", "City cost comparison", "Currency impact analysis", "AI budget optimization", "Trip cost calculator"], icon: "fa-coins" },
+
+  // ═══════════════════════════════════════
+  // DOMAIN 7: TECH CONTENT PLATFORMS (61–70)
+  // ═══════════════════════════════════════
+  { id: 61, title: "Dev Article Analyzer", description: "Analyze programming articles for tech insights.", features: ["Tech blog scraping", "Topic modeling", "Language trend analysis", "AI quality scoring", "Author influence tracking", "Tech stack dashboard"], icon: "fa-code" },
+  { id: 62, title: "Tech Topic Clustering Tool", description: "Cluster technology topics from developer communities.", features: ["Developer forum crawling", "TF-IDF vectorization", "K-means clustering", "AI cluster labeling", "Interactive visualization", "Trending topic detection"], icon: "fa-diagram-project" },
+  { id: 63, title: "Programming Trend Dashboard", description: "Monitor the rise and fall of programming languages.", features: ["Job posts and repo scraping", "Language mention frequency", "Year-over-year growth", "AI future predictions", "Community sentiment analysis", "Comparison charts"], icon: "fa-laptop-code" },
+  { id: 64, title: "Stack Overflow Insights", description: "Analyze Q&A patterns and knowledge gaps in dev communities.", features: ["Q&A data collection", "Unanswered question analysis", "Tag co-occurrence mapping", "Answer quality scoring", "AI knowledge gap detection", "Community health metrics"], icon: "fa-layer-group" },
+  { id: 65, title: "Open Source Project Analyzer", description: "Evaluate open source projects for quality and popularity.", features: ["Repository data scraping", "Commit activity analysis", "Contributor network mapping", "Issue resolution tracking", "AI project health scoring", "Project comparison dashboard"], icon: "fa-code-branch" },
+  { id: 66, title: "Tech Tutorial Quality Scorer", description: "Rate and recommend programming tutorials by quality.", features: ["Tutorial website scraping", "Content depth analysis", "Code example evaluation", "Readability scoring", "AI quality classification", "Tutorial recommendation engine"], icon: "fa-graduation-cap" },
+  { id: 67, title: "API Documentation Analyzer", description: "Compare and analyze API documentation quality across platforms.", features: ["API doc scraping", "Completeness scoring", "Example code detection", "Consistency analysis", "AI improvement suggestions", "Documentation benchmark dashboard"], icon: "fa-book-open" },
+  { id: 68, title: "Cybersecurity Threat Monitor", description: "Track cybersecurity threats and vulnerability reports.", features: ["Security advisory scraping", "CVE trend analysis", "Affected software tracking", "Severity classification", "AI risk assessment", "Threat intelligence dashboard"], icon: "fa-user-shield" },
+  { id: 69, title: "Tech Conference Tracker", description: "Aggregate and analyze tech conference talks and topics.", features: ["Conference site scraping", "Talk topic extraction", "Speaker network analysis", "Trend identification", "AI topic recommendation", "Conference comparison tool"], icon: "fa-microphone" },
+  { id: 70, title: "Code Snippet Search Engine", description: "Build a searchable index of code snippets from the web.", features: ["Code snippet scraping", "Language detection", "Inverted index construction", "Relevance ranking", "AI snippet explanation", "Developer search interface"], icon: "fa-magnifying-glass-code" },
+
+  // ═══════════════════════════════════════
+  // DOMAIN 8: HEALTH & WELLNESS (71–80)
+  // ═══════════════════════════════════════
+  { id: 71, title: "Health Article Analyzer", description: "Analyze health articles for misinformation and accuracy.", features: ["Health site scraping", "Claim extraction NLP", "Scientific source verification", "Misinformation flagging", "AI credibility scoring", "Health content dashboard"], icon: "fa-heart-pulse" },
+  { id: 72, title: "Drug Interaction Checker", description: "Build a searchable drug interaction database from medical sources.", features: ["Medical database scraping", "Interaction extraction", "Severity classification", "Search and retrieval system", "AI safety alerts", "Interaction visualization"], icon: "fa-pills" },
+  { id: 73, title: "Mental Health Resource Finder", description: "Aggregate and classify mental health resources from the web.", features: ["Resource directory scraping", "Service categorization", "Location-based filtering", "Quality scoring", "AI resource matching", "Accessible search interface"], icon: "fa-brain" },
+  { id: 74, title: "Fitness Trend Analyzer", description: "Track fitness and workout trends across social and web platforms.", features: ["Fitness content scraping", "Workout type classification", "Popularity trend tracking", "Equipment mention analysis", "AI workout recommendation", "Fitness trend dashboard"], icon: "fa-dumbbell" },
+  { id: 75, title: "Medical Research Summarizer", description: "Summarize recent medical research papers for accessibility.", features: ["Research abstract scraping", "Key finding extraction", "Topic categorization", "AI plain-language summaries", "Citation network analysis", "Research trend dashboard"], icon: "fa-microscope" },
+  { id: 76, title: "Symptom Checker Tool", description: "Match symptoms to potential conditions from medical databases.", features: ["Medical content scraping", "Symptom-condition mapping", "Probability-based matching", "Triage level suggestion", "AI differential diagnosis", "User-friendly symptom search"], icon: "fa-stethoscope" },
+  { id: 77, title: "Wellness Product Reviewer", description: "Analyze reviews of wellness and supplement products.", features: ["Product review scraping", "Ingredient analysis", "Efficacy claim extraction", "User experience sentiment", "AI product comparison", "Evidence-based scoring"], icon: "fa-spa" },
+  { id: 78, title: "Health News Tracker", description: "Monitor and classify health-related news and breakthroughs.", features: ["Health news scraping", "Topic classification", "Breakthrough detection", "Source credibility check", "AI impact assessment", "Health news dashboard"], icon: "fa-newspaper" },
+  { id: 79, title: "Exercise Form Analyzer", description: "Collect and organize exercise form guides from fitness resources.", features: ["Fitness site crawling", "Exercise instruction parsing", "Muscle group categorization", "Difficulty classification", "AI form tip generation", "Exercise library search"], icon: "fa-person-running" },
+  { id: 80, title: "Patient Review Analyzer", description: "Analyze patient reviews of healthcare providers and facilities.", features: ["Healthcare review scraping", "Provider rating analysis", "Wait time extraction", "Specialty comparison", "AI quality scoring", "Provider recommendation system"], icon: "fa-hospital" },
 ];

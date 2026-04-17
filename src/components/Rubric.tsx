@@ -276,7 +276,7 @@ export default function Rubric() {
             <div className={styles.gradingIcon}><i className="fa-solid fa-users"></i></div>
             <div>
               <span className={styles.gradingValue}>Team-Based</span>
-              <span className={styles.gradingLabel}>Max 4 Members</span>
+              <span className={styles.gradingLabel}>Max 5 Members</span>
             </div>
           </div>
         </div>
