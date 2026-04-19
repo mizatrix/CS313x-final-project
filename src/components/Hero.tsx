@@ -10,7 +10,7 @@ export default function Hero() {
         <p className={styles.description}>
           Build a real-world web intelligence product that collects, processes,
           and analyzes web-based data with AI-powered features. Supervised by{" "}
-          <strong>Dr. Moataz Samy</strong>, <strong>TA. Farah Darwish</strong> &amp; <strong>TA. Mazen Ashraf</strong>.
+          <strong>Dr. Moataz Samy</strong>, <strong>TA. Farah Darwish</strong>, <strong>TA. Mazen Ashraf</strong> &amp; <strong>TA. Sohila Ashraf</strong>.
         </p>
         <div className={styles.buttons}>
           <a href="#projects" className={`${styles.btn} ${styles.primaryBtn}`}>

@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "MSA CS313x | Information Retrieval Projects",
-  description: "MSA University — Faculty of Computer Science. CS313x Information Retrieval & Data Analysis project hub. Supervised by Dr. Moataz Samy, TA. Farah Darwish & TA. Mazen Ashraf.",
+  description: "MSA University — Faculty of Computer Science. CS313x Information Retrieval & Data Analysis project hub. Supervised by Dr. Moataz Samy, TA. Farah Darwish, TA. Mazen Ashraf & TA. Sohila Ashraf.",
 };
 
 export default function RootLayout({
