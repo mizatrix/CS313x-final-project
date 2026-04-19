@@ -1,4 +1,4 @@
-import { login, signup } from './actions'
+import { login, signup, loginWithGoogle } from './actions'
 import styles from './login.module.css'
 import Header from '@/components/Header'
 
@@ -58,6 +58,15 @@ export default async function LoginPage({
             </div>
           </form>
 
+          <div className={styles.divider}>
+            <span>or continue with</span>
+          </div>
+
+          <form>
+            <button formAction={loginWithGoogle} className={styles.btnGoogle}>
+              <i className="fa-brands fa-google"></i> Sign in with Google
+            </button>
+          </form>
           <p className={styles.footerNote}>
             Only <strong>@msa.edu.eg</strong> emails are accepted.
           </p>

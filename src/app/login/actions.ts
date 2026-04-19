@@ -3,6 +3,7 @@
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 import { createClient } from '@/utils/supabase/server'
+import { headers } from 'next/headers'
 import { createClient as createServiceClient } from '@supabase/supabase-js'
 
 // Emails that should automatically get instructor role
@@ -80,4 +81,27 @@ export async function signup(formData: FormData) {
 
   // After successful signup, show a message about email confirmation
   redirect('/login?success=Account created! Check your email inbox to confirm, then log in.')
+}
+
+export async function loginWithGoogle() {
+  const supabase = await createClient()
+  const origin = (await headers()).get('origin')
+
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: {
+      redirectTo: `${origin}/auth/callback`,
+      queryParams: {
+        hd: 'msa.edu.eg',
+      },
+    },
+  })
+
+  if (error) {
+    redirect(`/login?error=${encodeURIComponent(error.message)}`)
+  }
+
+  if (data.url) {
+    redirect(data.url)
+  }
 }
